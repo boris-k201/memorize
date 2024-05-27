@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Заметка 1</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QTextEdit" name="textEdit_3">
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#c0bfbc;&quot;&gt;Вау, тут &lt;/span&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline; color:#c0bfbc;&quot;&gt;мож&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic; text-decoration: underline; color:#c0bfbc;&quot;&gt;н&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic; text-decoration: underline; color:#dc8add;&quot;&gt;о п&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic; color:#dc8add;&quot;&gt;исать тек&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#dc8add;&quot;&gt;ст и фор&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#dc8add; vertical-align:super;&quot;&gt;матироват&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#dc8add; vertical-align:sub;&quot;&gt;ь его по разном&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#dc8add;&quot;&gt;у &lt;/span&gt;&lt;span style=&quot; color:#dc8add;&quot;&gt;всякому&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Заметка 2</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QTextEdit" name="textEdit_2"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Заметка 3</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QTextEdit" name="textEdit">
+          <property name="markdown">
+           <string notr="true">## Wow!
+
+- stuff
+- things
+</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;h2 style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large; font-weight:700;&quot;&gt;Wow!&lt;/span&gt;&lt;/h2&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
+&lt;li style=&quot; margin-top:6px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;stuff&lt;/li&gt;
+&lt;li style=&quot; margin-top:6px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;things&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="acceptRichText">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <widget class="QMenu" name="menu_recent">
+     <property name="title">
+      <string>Недавние</string>
+     </property>
+     <addaction name="actionC_Users_Whatever_blah_db_sqlite3"/>
+     <addaction name="actiongoogle_drive_user_gmail_com"/>
+     <addaction name="action_home_user_downloads_database_db"/>
+    </widget>
+    <addaction name="menu_create_note"/>
+    <addaction name="menu_create_database"/>
+    <addaction name="menu_open_database"/>
+    <addaction name="separator"/>
+    <addaction name="menu_import_note"/>
+    <addaction name="menu_export_note"/>
+    <addaction name="separator"/>
+    <addaction name="menu_save"/>
+    <addaction name="menu_save_as"/>
+    <addaction name="separator"/>
+    <addaction name="menu_recent"/>
+    <addaction name="separator"/>
+    <addaction name="menu_close"/>
+    <addaction name="menu_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_edit">
+    <property name="title">
+     <string>Правка</string>
+    </property>
+    <addaction name="menu_cancel"/>
+    <addaction name="many_retry"/>
+    <addaction name="menu_copy"/>
+    <addaction name="menu_cut"/>
+    <addaction name="menu_paste"/>
+    <addaction name="menu_select_all"/>
+    <addaction name="separator"/>
+    <addaction name="menu_settings"/>
+   </widget>
+   <widget class="QMenu" name="menu_about">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="action_30"/>
+   </widget>
+   <widget class="QMenu" name="menu_view">
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <addaction name="menu_menu"/>
+    <addaction name="menu_notes_list"/>
+    <addaction name="separator"/>
+    <addaction name="menu_fullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="menu_increase_text"/>
+    <addaction name="menu_decrease_text"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menu_edit"/>
+   <addaction name="menu_view"/>
+   <addaction name="menu_about"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="menu_open_database">
+   <property name="text">
+    <string>Открыть базу данных</string>
+   </property>
+  </action>
+  <action name="menu_create_database">
+   <property name="text">
+    <string>Создать базу данных</string>
+   </property>
+  </action>
+  <action name="menu_save">
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="menu_save_as">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+  </action>
+  <action name="menu_close">
+   <property name="text">
+    <string>Закрыть</string>
+   </property>
+  </action>
+  <action name="menu_exit">
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+  </action>
+  <action name="actionC_Users_Whatever_blah_db_sqlite3">
+   <property name="text">
+    <string>C:\Users\Whatever\blah\db.sqlite3</string>
+   </property>
+  </action>
+  <action name="actiongoogle_drive_user_gmail_com">
+   <property name="text">
+    <string>google-drive://user@gmail.com/backup.db</string>
+   </property>
+  </action>
+  <action name="action_home_user_downloads_database_db">
+   <property name="text">
+    <string>/home/user/downloads/database.db</string>
+   </property>
+  </action>
+  <action name="menu_create_note">
+   <property name="text">
+    <string>Создать заметку</string>
+   </property>
+  </action>
+  <action name="menu_export_note">
+   <property name="text">
+    <string>Экспортировать заметку</string>
+   </property>
+  </action>
+  <action name="menu_import_note">
+   <property name="text">
+    <string>Импортировать заметку</string>
+   </property>
+  </action>
+  <action name="menu_cancel">
+   <property name="text">
+    <string>Отменить</string>
+   </property>
+  </action>
+  <action name="many_retry">
+   <property name="text">
+    <string>Повторить</string>
+   </property>
+  </action>
+  <action name="menu_copy">
+   <property name="text">
+    <string>Копировать</string>
+   </property>
+  </action>
+  <action name="menu_cut">
+   <property name="text">
+    <string>Вырезать</string>
+   </property>
+  </action>
+  <action name="menu_paste">
+   <property name="text">
+    <string>Вставить</string>
+   </property>
+  </action>
+  <action name="menu_select_all">
+   <property name="text">
+    <string>Выделить всё</string>
+   </property>
+  </action>
+  <action name="menu_settings">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="menu_menu">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Строка меню</string>
+   </property>
+  </action>
+  <action name="menu_fullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>На весь экран</string>
+   </property>
+  </action>
+  <action name="menu_increase_text">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Увеличить текст</string>
+   </property>
+  </action>
+  <action name="menu_decrease_text">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Уменьшить текст</string>
+   </property>
+  </action>
+  <action name="menu_notes_list">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Список заметок</string>
+   </property>
+  </action>
+  <action name="action_30">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

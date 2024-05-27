@@ -1,0 +1,9 @@
+{
+    "files": [
+        "mainwindow.py",
+        "aboutdialog.ui",
+        "mainwindow.ui",
+        "models.py",
+        ".gitignore"
+    ]
+}
