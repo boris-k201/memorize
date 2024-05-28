@@ -5,19 +5,18 @@
 #     pyside2-uic form.ui -o ui_form.py
 
 import sys
-import sqlcipher3
 import os.path
 from os import makedirs
 from shutil import copyfile
 from mimetypes import guess_type
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QDialog, QTextEdit, QMessageBox, QListWidgetItem
 from PySide6.QtWidgets import QWidget, QLabel, QScrollArea, QSizePolicy, QVBoxLayout, QInputDialog, QLineEdit
-from PySide6.QtGui import QPalette, QPixmap, QImage, QColorSpace, QGuiApplication, QImageReader, QImageWriter, QKeySequence, QPainter, QPixmap, QFont
-from PySide6.QtCore import QDir, QStandardPaths, Qt, Slot, QByteArray, QBuffer, QIODevice
+from PySide6.QtGui import QPalette, QPixmap, QImage, QColorSpace, QGuiApplication, QImageReader, QImageWriter, QKeySequence, QPainter, QFont
+from PySide6.QtCore import QDir, QStandardPaths, QByteArray, QBuffer, QIODevice
 from models import Base, Document, Text, Image, Attachment, DocumentText, DocumentImage, DocumentAttachment
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker
 from ui_mainwindow import Ui_MainWindow
 from ui_add_note_dialog import Ui_Dialog as Ui_AddNoteDialog
 from ui_about_dialog import Ui_Dialog as Ui_AboutDialog
@@ -107,6 +106,8 @@ class MainWindow(QMainWindow):
         self.setAcceptDrops(True)
 
         self.addNoteDialog.accepted.connect(self.add_note)
+        self.ui.tabWidget.tabBarDoubleClicked.connect(self.rename_note)
+        self.ui.tabWidget.tabCloseRequested.connect(self.delete_note)
 
         self.ui.action_open_database.triggered.connect(self.open_db)
         self.ui.action_create_database.triggered.connect(self.create_db)
@@ -132,6 +133,39 @@ class MainWindow(QMainWindow):
         self.ui.action_increase_text.triggered.connect(self.increase_font_size)
 
         self.ui.action_about_program.triggered.connect(self.aboutDialog.open)
+
+    def rename_note(self, tab_index):
+        document = self.session.query(Document).filter(Document.name==self.ui.tabWidget.tabText(tab_index)).one()
+        new_name, ok = QInputDialog.getText(self, "Введите новое название",
+                                        "Название:", QLineEdit.Normal)
+        if ok and new_name:
+            self.ui.tabWidget.setTabText(tab_index, new_name)
+            document.name = new_name
+            self.session.commit()
+
+    def delete_note(self, tab_index):
+        document = self.session.query(Document).filter(Document.name==self.ui.tabWidget.tabText(tab_index)).one()
+        msgBox = QMessageBox(self)
+        msgBox.setText(f"Заметка {document.name} будет удалена")
+        msgBox.setInformativeText("Вы уверены, что хотите удалить эту заметку? Будут также утеряны все приложения.")
+        msgBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        if msgBox.exec():
+            try:
+                for text in document.document_texts:
+                    self.session.delete(text.text)
+                    self.session.delete(text)
+                for image in document.document_images:
+                    self.session.delete(image.image)
+                    self.session.delete(image)
+                for attachment in document.document_attachments:
+                    self.session.delete(attachment.attachment)
+                    self.session.delete(attachment)
+                self.session.delete(document)
+                self.session.commit()
+                self.ui.tabWidget.removeTab(tab_index)
+            except SQLAlchemyError as e:
+                self.sesion.rollback()
+                print("!!!", e)
 
     def swap_colors(self, state):
         if state:
