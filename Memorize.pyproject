@@ -1,9 +1,11 @@
 {
     "files": [
         "mainwindow.py",
-        "aboutdialog.ui",
+        "about_dialog.ui",
         "mainwindow.ui",
         "models.py",
-        ".gitignore"
+        ".gitignore",
+        "add_note_dialog.ui",
+        "tab.ui"
     ]
 }

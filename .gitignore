@@ -75,3 +75,4 @@ CMakeLists.txt.user*
 .qtcreator/
 ui_*.py
 *.pyproject.user
+prev.txt
